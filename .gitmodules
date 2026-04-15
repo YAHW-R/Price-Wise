@@ -1,0 +1,6 @@
+[submodule "scraping-python"]
+	path = scraping-python
+	url = https://github.com
+[submodule "brocker-go"]
+	path = brocker-go
+	url = https://github.com
