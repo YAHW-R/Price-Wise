@@ -4,3 +4,6 @@
 [submodule "brocker-go"]
 	path = brocker-go
 	url = https://github.com/YAHW-R/Price-Wise-broker-go
+[submodule "AI-python"]
+	path = AI-python
+	url = https://github.com/YAHW-R/Price-Wise-AI-python
