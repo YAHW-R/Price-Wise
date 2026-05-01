@@ -1,0 +1,41 @@
+services:
+  broker:
+    build:
+      context: ./brocker-go
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - AI_URL=http://ai:8000/api/v1
+      - SCRAPER_URL=http://scraper:8000
+    depends_on:
+      - ai
+      - scraper
+    networks:
+      - pricewise-net
+
+  ai:
+    build:
+      context: ./AI-python
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8000
+    networks:
+      - pricewise-net
+    # Port 8000 is internal, not exposed to host
+
+  scraper:
+    build:
+      context: ./scraping-python
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8000
+      - BROKER_URL=http://broker:8000/ingest/raw
+    networks:
+      - pricewise-net
+    # Port 8000 is internal, not exposed to host
+
+networks:
+  pricewise-net:
+    driver: bridge
