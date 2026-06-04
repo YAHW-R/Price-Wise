@@ -68,6 +68,7 @@ Price-Wise-system/
 └── scraping-python/     # Servicio de Scraping Web (FastAPI)
 ```
 
-## 📜 Licencia
+## Coolaboradores
 
-[Agregar información de licencia aquí]
+- Sameul Salinas Ia and Flow developer
+- Andrea Marquez Python server developer
